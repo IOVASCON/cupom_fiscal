@@ -7,10 +7,10 @@ def gerar_cupom_fiscal(produtos, venda):
     
     # Lista para armazenar as linhas do cupom fiscal
     resultado = []
-    resultado.append("=" * 46)  # Linha de separação
-    resultado.append("C U P O M   F I S C A L".center(46, ' '))  # Título centralizado
+    resultado.append("=" * 50)  # Linha de separação
+    resultado.append("C U P O M   F I S C A L".center(50, ' '))  # Título centralizado
     resultado.append(f"{'ITEM':<5}{'CÓDIGO':<7}{'DESCRIÇÃO':<25}{'QTD.':<6}{'VL_UNIT(R$)':<10}{'ST VL':<10}")  # Cabeçalho das colunas
-    resultado.append("=" * 46)  # Linha de separação
+    resultado.append("=" * 50)  # Linha de separação
     
     # Itera sobre cada item da venda
     for indice in range(len(venda)):
@@ -26,8 +26,8 @@ def gerar_cupom_fiscal(produtos, venda):
         resultado.append(f"{item:<5}{codigo:<7}{produto:<25}{quantidade:<6}{valor_unitario:<10.2f}{subtotal:<10.2f}")
 
     # Adiciona a linha final e o total ao resultado
-    resultado.append("=" * 46)
-    resultado.append(f"{'TOTAL R$':>36} {valor_total:.2f}")
+    resultado.append("=" * 50)
+    resultado.append(f"{'TOTAL R$':<40}{valor_total:.2f}")
 
     # Retorna o cupom fiscal como uma única string
     return "\n".join(resultado)
